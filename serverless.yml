@@ -39,11 +39,22 @@ custom:
       - id: ${env:ALEXA_SKILL_ID}
         manifest:
           publishingInformation:
+            distributionCountries: [
+              "US"
+            ]
+            isAvailableWorldwide: false
+            testingInstructions: "Say 'Alexa, open ${env:ALEXA_SKILL_NAME}.'"
             locales:
               en-US:
                 # TODO: Replace me
                 name: ${env:ALEXA_SKILL_NAME}
                 summary: "Insert a summary for your skill"
+                examplePhrases: [
+                  "Alexa, open ${env:ALEXA_SKILL_NAME}",
+                  "Alexa, ask ${env:ALEXA_SKILL_NAME} how many...",
+                  "Alexa, ask ${env:ALEXA_SKILL_NAME}...."
+                ]
+                description: "Alexa Skill that shares interesting facts about ${env:ALEXA_SKILL_NAME}"
           apis:
             custom:
               endpoint:
