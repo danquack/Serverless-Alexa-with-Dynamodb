@@ -11,21 +11,34 @@ class AlexaHandler extends BaseHandler {
       !event.session ||
       !event.session.application ||
       !event.request ||
-      !event.request.intent ||
-      !event.request.intent.name
+      !event.request.type
     ) {
       this.error('Invalid Request')
     }
   }
 
   processRequest() {
-    switch (this.event.request.intent.name) {
-      case 'Amazon.HelpIntent': {
+    console.log(this.event)
+    switch (this.event.request.type ) {
+      case 'LaunchRequest': {
         this.processHelp();
         break;
       }
-      default: {
-        this.processMetrics();
+      case 'SessionEndedRequest': {
+        this.respond('Goodbye', '', true);
+        break;
+      }
+      case 'IntentRequest': {
+        switch (this.event.request.intent.name) {
+          case 'Amazon.HelpIntent': {
+            this.processHelp();
+            break;
+          }
+          default: {
+            this.processMetrics();
+            break;
+          }
+        }
         break;
       }
     }

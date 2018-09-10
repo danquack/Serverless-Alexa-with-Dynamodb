@@ -11,7 +11,7 @@ export class BaseHandler {
         this.cb = cb;
     }
 
-    respond(title: string, message: string) {
+    respond(title: string, message: string, endSession: boolean = false) {
         this.cb(null, {
             "version": "1.0",
             "response": {
@@ -24,7 +24,7 @@ export class BaseHandler {
                     "title": title,
                     "type": "Simple"
                 },
-                "shouldEndSession": true
+                "shouldEndSession": endSession
             },
             "sessionAttributes": {}
         });
