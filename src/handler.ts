@@ -45,7 +45,7 @@ class AlexaHandler extends BaseHandler {
   }
 
   private async processHelp() {
-    this.respond('Help', 'For a list of available commands please visit the readme for alexa-helloworld')
+    this.respond('Help', 'For a list of available commands please visit the readme for Serverless-Alexa-with-Dynamodb')
   }
 
   private getDynamoResponse(metric: String): Promise<any> {
