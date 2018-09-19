@@ -1,5 +1,6 @@
 # Serverless Alexa with Dynamodb
 --------
+[![Build Status](https://travis-ci.org/danquack/Serverless-Alexa-with-Dynamodb.svg?branch=master)](https://travis-ci.org/danquack/Serverless-Alexa-with-Dynamodb)
 
 This sample alexa skill is a facts based skill designed to report metrics out of dynamodb. The idea is that something external would update dynamodb, which would then be read through alexa.
 
