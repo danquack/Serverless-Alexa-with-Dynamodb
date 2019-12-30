@@ -3,7 +3,7 @@
   "description": "",
   "version": "0.1.0",
   "dependencies": {
-    "aws-lambda": "^0.1.2",
+    "aws-lambda": "^1.0.4",
     "aws-sdk": "^2.311.0",
     "serverless": "^1.30.3",
     "serverless-alexa-skills": "^0.1.0",
